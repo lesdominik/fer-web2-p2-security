@@ -1,0 +1,23 @@
+{
+	"name": "fer-web2-p2-security",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lesdominik/fer-web2-p2-security.git"
+	},
+	"author": "dominik.les@fer.hr",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/lesdominik/fer-web2-p2-security/issues"
+	},
+	"homepage": "https://github.com/lesdominik/fer-web2-p2-security#readme",
+	"dependencies": {
+		"express": "^4.21.1"
+	}
+}
