@@ -18,6 +18,7 @@
 	},
 	"homepage": "https://github.com/lesdominik/fer-web2-p2-security#readme",
 	"dependencies": {
+		"bcryptjs": "^2.4.3",
 		"express": "^4.21.1"
 	}
 }
