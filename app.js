@@ -6,9 +6,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-	res.send('Hello there.');
-});
+app.set('view engine', 'ejs');
+
+const commentController = require('./controllers/commentController');
+
+app.get('/', commentController.getHomePage);
 
 app.listen(3000, () => {
 	console.log('App is running on http://localhost:3000');
