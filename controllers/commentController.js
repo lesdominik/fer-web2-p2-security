@@ -10,3 +10,8 @@ exports.addComment = async (req, res) => {
 	await model.addComment(username, password, comment, { exposeSensitiveData, enableXSS });
 	res.redirect('/');
 };
+
+exports.deleteComment = (req, res) => {
+	model.deleteComment(req.params.id);
+	res.redirect('/');
+};

@@ -25,6 +25,7 @@ async function addComment(username, password, comment, options) {
 	const sanitizedComment = options.enableXSS ? comment.trim() : sanitize(comment.trim());
 
 	comments.push({
+		id: crypto.randomUUID(),
 		username,
 		password: hashedPass,
 		comment: sanitizedComment,
@@ -33,6 +34,11 @@ async function addComment(username, password, comment, options) {
 	writeComments(comments);
 }
 
-function deleteComment() {}
+function deleteComment(id) {
+	let comments = readComments();
+
+	comments = comments.filter((comment) => comment.id !== id);
+	writeComments(comments);
+}
 
 module.exports = { readComments, addComment, deleteComment };
