@@ -5,8 +5,8 @@ exports.getHomePage = (req, res) => {
 	res.render('index', { comments });
 };
 
-exports.addComment = (req, res) => {
+exports.addComment = async (req, res) => {
 	const { username, password, comment, exposeSensitiveData, enableXSS } = req.body;
-	console.log(username, password, comment, exposeSensitiveData, enableXSS);
+	await model.addComment(username, password, comment, { exposeSensitiveData, enableXSS });
 	res.redirect('/');
 };

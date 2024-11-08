@@ -9,7 +9,29 @@ function readComments() {
 	return JSON.parse(data || []);
 }
 
-function addComment() {}
+function writeComments(comments) {
+	fs.writeFileSync(filePath, JSON.stringify(comments, null, 2));
+}
+
+function sanitize(comment) {
+	// sanitize comment
+	return comment;
+}
+
+async function addComment(username, password, comment, options) {
+	const comments = readComments();
+
+	const hashedPass = options.exposeSensitiveData ? password : await bcrypt.hash(password, 10);
+	const sanitizedComment = options.enableXSS ? comment.trim() : sanitize(comment.trim());
+
+	comments.push({
+		username,
+		password: hashedPass,
+		comment: sanitizedComment,
+	});
+
+	writeComments(comments);
+}
 
 function deleteComment() {}
 
