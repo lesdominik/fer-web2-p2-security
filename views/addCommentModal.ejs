@@ -1,0 +1,37 @@
+<div class="modal fade" id="addCommentModal" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form action="/add" method="post">
+				<div class="modal-header">
+					<h5 class="modal-title" id="addCommentModalLabel">Add Comment</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="mb-3">
+						<label for="username" class="form-label">Username</label>
+						<input type="text" class="form-control" name="username" required />
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" class="form-control" name="password" required />
+					</div>
+					<div class="mb-3">
+						<label for="comment" class="form-label">Comment</label>
+						<textarea class="form-control" name="comment" required></textarea>
+					</div>
+					<div class="mb-2">
+						<input type="checkbox" name="exposeSensitiveData" id="exposeSensitiveData" />
+						<label for="exposeSensitiveData">Enable Sensitive Data Exposure</label>
+					</div>
+					<div class="mb-2">
+						<input type="checkbox" name="enableXSS" id="enableXSS" />
+						<label for="enableXSS">Enable XSS Vulnerability</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
