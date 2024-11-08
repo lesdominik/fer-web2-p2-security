@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 const commentController = require('./controllers/commentController');
 
 app.get('/', commentController.getHomePage);
+app.post('/add', commentController.addComment);
 
 app.listen(3000, () => {
 	console.log('App is running on http://localhost:3000');
