@@ -21,10 +21,21 @@
 						<div>
 							<h5 class="card-title"><%= comment.username %></h5>
 							<p class="card-text"><%= comment.comment %></p>
+							<p id="pass-<%= comment.id %>" style="display: none; color: red">
+								Password: <%= comment.password %>
+							</p>
 						</div>
-						<form action="/delete/<%= comment.id %>" method="post" class="d-inline">
-							<button type="submit" class="btn btn-danger">Delete</button>
-						</form>
+						<div>
+							<button
+								id="btn-<%= comment.id %>"
+								class="btn btn-success"
+								onclick="togglePassword('<%= comment.id %>')">
+								Show Password
+							</button>
+							<form action="/delete/<%= comment.id %>" method="post" class="d-inline">
+								<button type="submit" class="btn btn-danger">Delete</button>
+							</form>
+						</div>
 					</div>
 				</div>
 				<% }); %>
@@ -34,5 +45,6 @@
 		<%- include('addCommentModal') %>
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/index.js"></script>
 	</body>
 </html>
