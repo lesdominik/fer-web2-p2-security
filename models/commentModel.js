@@ -14,8 +14,13 @@ function writeComments(comments) {
 }
 
 function sanitize(comment) {
-	// sanitize comment
-	return comment;
+	return comment
+		.replace(/&/g, '&amp;')
+		.replace(/</g, '&lt;')
+		.replace(/>/g, '&gt;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&#39;')
+		.replace(/\//g, '&#x2F;');
 }
 
 async function addComment(username, password, comment, options) {

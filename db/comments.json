@@ -1,14 +1,1 @@
-[
-  {
-    "id": "d192fdd3-c99b-4362-9c76-f7de8c2c8a50",
-    "username": "testUser",
-    "password": "$2a$10$QSMUW0nruM4XpT5kM9HcNeFMm9vDVHg.KtifGmaDtcXtwATz90hBG",
-    "comment": "Test comment.\r\nVulnerabilites disabled."
-  },
-  {
-    "id": "bfdce727-4445-43d4-b807-0ab89028ce07",
-    "username": "web2user",
-    "password": "nesigurniPass",
-    "comment": "SDE enabled"
-  }
-]
+[]
